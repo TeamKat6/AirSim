@@ -62,6 +62,7 @@ done
 # set the environment varible SDL_VIDEODRIVER to SDL_VIDEODRIVER_VALUE
 # and tell the docker container to execute UNREAL_BINARY_COMMAND
 $DOCKER_CMD -it \
+    --privileged --gpus all \
     -v $(pwd)/settings.json:/home/airsim_user/Documents/AirSim/settings.json \
     -v $UNREAL_BINARY_PATH:$UNREAL_BINARY_PATH \
     -e SDL_VIDEODRIVER=$SDL_VIDEODRIVER_VALUE \
